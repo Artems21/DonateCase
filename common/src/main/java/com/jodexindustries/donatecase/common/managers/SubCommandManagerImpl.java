@@ -28,7 +28,8 @@ public class SubCommandManagerImpl implements SubCommandManager {
             OpenCaseCommand.class,
             RegistryCommand.class,
             ReloadCommand.class,
-            SetKeyCommand.class
+            SetKeyCommand.class,
+            GuiCommand.class
     );
 
     private static final Map<String, SubCommand> registeredSubCommands = new HashMap<>();
