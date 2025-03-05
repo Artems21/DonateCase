@@ -221,15 +221,11 @@ public class PopAnimation extends BukkitJavaAnimation {
             }
         }
 
-
         private void cleanup(SchedulerTask task) {
             asList.forEach(pair -> pair.fst.remove());
             task.cancel();
             end();
         }
 
-        private double stepTowards(double current, double target) {
-            return Double.compare(current, target) == 0 ? 0 : (current > target ? -0.05 : 0.05);
-        }
     }
 }

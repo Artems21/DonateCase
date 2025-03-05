@@ -24,6 +24,7 @@ import com.jodexindustries.donatecase.api.tools.PAPI;
 import com.jodexindustries.donatecase.spigot.animations.wheel.WheelAnimation;
 import com.jodexindustries.donatecase.common.gui.items.HISTORYItemHandlerImpl;
 import com.jodexindustries.donatecase.common.gui.items.OPENItemClickHandlerImpl;
+import com.jodexindustries.donatecase.spigot.gui.listener.InteractListener;
 import com.jodexindustries.donatecase.spigot.holograms.CMIHologramsImpl;
 import com.jodexindustries.donatecase.spigot.holograms.DecentHologramsImpl;
 import com.jodexindustries.donatecase.spigot.holograms.FancyHologramsImpl;
@@ -97,6 +98,8 @@ public class BukkitBackend extends BackendPlatform {
         loadHologramDrivers();
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventListener(this), plugin);
+        Bukkit.getServer().getPluginManager().registerEvents(new InteractListener(this, plugin), plugin);
+
 
         api.load();
         // after config load

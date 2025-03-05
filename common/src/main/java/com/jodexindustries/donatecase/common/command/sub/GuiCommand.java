@@ -7,11 +7,16 @@ import com.jodexindustries.donatecase.api.platform.DCCommandSender;
 import com.jodexindustries.donatecase.common.command.DefaultCommand;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GuiCommand extends DefaultCommand {
-    public GuiCommand(DCAPI api, String name, SubCommandType type) {
-        super(api, name, type);
+
+    private final DCAPI api;
+
+    public GuiCommand(DCAPI api) {
+        super(api, "gui", SubCommandType.ADMIN);
+        this.api = api;
     }
 
     @Override
@@ -21,6 +26,6 @@ public class GuiCommand extends DefaultCommand {
 
     @Override
     public List<String> getTabCompletions(@NotNull DCCommandSender sender, @NotNull String label, @NotNull String[] args) throws SubCommandException {
-        return List.of();
+        return new ArrayList<>();
     }
 }
